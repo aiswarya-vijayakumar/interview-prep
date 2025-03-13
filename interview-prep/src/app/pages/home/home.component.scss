@@ -1,0 +1,18 @@
+.hero-section {
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .metrics-section, .subscription-section, .feedback-section {
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  

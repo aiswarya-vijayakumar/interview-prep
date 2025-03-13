@@ -1,0 +1,19 @@
+.carousel-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.carousel-indicators span {
+  width: 10px;
+  height: 10px;
+  background: gray;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.carousel-indicators .active {
+  background: white;
+}

@@ -1,0 +1,36 @@
+.header-container {
+    background: linear-gradient(135deg, #4f46e5, #9333ea); /* Smooth purple gradient */
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+  
+  .brand-name {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .signup-btn {
+    background-color: #facc15; /* Yellow */
+    color: #1e293b; /* Dark text */
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .signup-btn:hover {
+    background-color: #eab308; /* Slightly darker yellow */
+    transform: scale(1.05);
+  }
+  

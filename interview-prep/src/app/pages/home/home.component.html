@@ -1,0 +1,56 @@
+<app-header></app-header>
+  
+  <div class="hero-section text-center py-16 px-8 bg-blue-500 text-white animate-fade-in">
+    <h2 class="text-4xl font-extrabold mb-4">
+      Use <span class="text-yellow-300">AI as Your Mentor</span>
+    </h2>
+    <p class="text-lg mb-6">
+      Master technology & get placed at top companies
+    </p>
+    <button mat-raised-button color="accent" class="text-lg px-6 py-3" (click)="startFreeTrial()">
+      Try for Free
+    </button>
+  </div>
+  <app-carousel></app-carousel>
+  <!-- User Metrics Section -->
+  <div class="metrics-section py-10 px-6 flex justify-center animate-fade-in">
+    <!-- <mat-card class="w-80 text-center mx-4 p-6 bg-blue-500">
+      <h3 class="text-2xl font-bold">{{ userCount > 0 ? userCount : 'Be among the first users!' }}</h3> -->
+      <!-- <p class="text-gray-600">Users have tested this tool.</p> -->
+    <!-- </mat-card> -->
+    <!-- <mat-card class="w-80 text-center mx-4 p-6">
+      <h3 class="text-2xl font-bold">4.9/5</h3>
+      <p class="text-gray-600">Average user rating</p>
+    </mat-card> -->
+  </div>
+  
+  <div class="subscription-section text-center py-16 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white animate-slide-in">
+    <h2 class="text-4xl font-bold mb-8">Subscription Plans</h2>
+    <div class="flex justify-center space-x-8">
+      <mat-card class="p-8 shadow-2xl w-80 rounded-2xl bg-white text-gray-800 transform transition hover:scale-105">
+        <h3 class="text-2xl font-bold mb-4">Free Plan</h3>
+        <p class="text-gray-600 mb-4">Limited mock interviews & AI feedback.</p>
+        <button mat-button color="primary" class="px-6 py-2 rounded-full bg-indigo-500 text-white hover:bg-indigo-100" (click)="subscribe('free')">Get Started</button>
+      </mat-card>
+      <mat-card class="p-8 shadow-2xl w-80 rounded-2xl bg-white text-gray-800 transform transition hover:scale-105">
+        <h3 class="text-2xl font-bold mb-4">Premium (₹499/month)</h3>
+        <p class="text-gray-600 mb-4">Unlimited AI coaching, mock interviews & feedback.</p>
+        <button mat-button color="primary" class="px-6 py-2 rounded-full bg-purple-500 text-white hover:bg-purple-100" (click)="subscribe('premium')">Subscribe</button>
+      </mat-card>
+    </div>
+  </div>
+  
+  <!-- Feedback Section -->
+  <div class="feedback-section text-center py-16 px-6 bg-blue-100">
+    <h2 class="text-4xl font-bold mb-6">Give Us Your Feedback</h2>
+    <textarea matInput placeholder="Tell us your thoughts..." [(ngModel)]="feedback" class="w-full p-4 border rounded-lg shadow-md"></textarea>
+    <button mat-raised-button color="primary" class="mt-6 px-8 py-2 rounded-full bg-blue-500 text-white hover:bg-blue-600" (click)="submitFeedback()">Submit</button>
+  </div>
+  
+  <!-- Contact Section -->
+  <div class="contact-section text-center py-16 bg-gray-100">
+    <h2 class="text-4xl font-bold mb-6">Contact Us</h2>
+    <p class="text-lg text-gray-600 mb-4">Have questions? Reach out to us!</p>
+    <div class="flex items-center justify-center"><mat-icon>mail</mat-icon> <a href="mailto:support@hirereadyai@gmail.com" class="text-blue-600 hover:underline">support&#64;hirereadyai&#64;gmail.com</a></div>
+  </div>
+  

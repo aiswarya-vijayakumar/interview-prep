@@ -1,0 +1,16 @@
+<mat-toolbar class="header-container shadow-lg">
+  <!-- Logo & Brand Name -->
+  <div class="flex items-center space-x-3 cursor-pointer" [routerLink]="['/']">
+    <img src="logo.webp" alt="Hire Ready AI Logo" class="logo" />
+    <span class="brand-name text-white text-xl font-semibold tracking-wide">
+      Hire Ready AI [Beta]
+    </span>
+  </div>
+
+  <div class="flex-grow"></div> <!-- Pushes Sign Up button to the right -->
+
+  <!-- Sign Up Button -->
+  <button mat-raised-button color="accent" class="signup-btn">
+    Sign Up
+  </button>
+</mat-toolbar>
