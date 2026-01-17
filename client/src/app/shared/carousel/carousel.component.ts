@@ -10,7 +10,7 @@ import { setInterval } from 'timers/promises';
   standalone:true,
   imports: [MatCardModule, MatIconModule, CommonModule, MatButtonModule],
   templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css'],
+  styleUrls: ['./carousel.component.scss'],
 })
 export class CarouselComponent {
   currentIndex = 0; interval:any;
