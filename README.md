@@ -5,7 +5,7 @@ A full-stack interview preparation web application that helps users practice top
 
 ## Live Demo
 
-The application is deployed on **Vercel**   [Live Demo](interview-prep-blush.vercel.app)
+The application is deployed on **Vercel**   [Live Demo](http://interview-prep-blush.vercel.app/)
 
 ## **Features**  
 
