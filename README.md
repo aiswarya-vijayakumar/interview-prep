@@ -4,7 +4,8 @@
 A full-stack interview preparation web application that helps users practice topic-wise technical questions and improve their solutions. Users can select a technology (e.g., Spring Boot, Angular, Node.js) and view curated interview questions. The platform is designed to be extended with AI-powered personalized feedback and solution recommendations.
 
 ## Live Demo
-coming soon.....
+
+The application is deployed on **Vercel**   [Live Demo](interview-prep-blush.vercel.app)
 
 ## **Features**  
 
