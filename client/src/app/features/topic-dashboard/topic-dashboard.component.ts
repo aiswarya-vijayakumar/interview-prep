@@ -64,7 +64,7 @@ export class TopicDashboardComponent {
 
   ngOnInit() {
   
-    this.selectedTopic = localStorage.getItem('selectedTopic') as string;
+    // this.selectedTopic = localStorage.getItem('selectedTopic') as string;
   }
 
   getQuestions() {
