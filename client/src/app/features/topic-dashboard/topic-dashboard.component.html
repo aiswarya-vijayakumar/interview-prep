@@ -1,0 +1,34 @@
+<app-header></app-header>
+<div class="min-h-screen bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-4xl font-bold mb-6 text-center">Master {{ selectedTopic || 'a Topic' }}</h1>
+
+      <div *ngIf="selectedTopic" class="bg-white p-6 rounded-lg shadow-md">
+        <h2 class="text-2xl font-semibold mb-4">{{ selectedTopic }} Levels</h2>
+        <div class="flex gap-4 mb-6">
+          <button *ngFor="let level of levels" (click)="setLevel(level)" 
+            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+            {{ level }}
+          </button>
+        </div>
+
+        <div *ngIf="currentLevel">
+          <h3 class="text-xl font-medium mb-4">{{ currentLevel }} Level Questions</h3>
+          <ul class="mb-6">
+            <li *ngFor="let question of getQuestions()" class="mb-2"> {{ question }}</li>
+          </ul>
+
+          <h3 class="text-xl font-medium mt-6 mb-2">Official Documentation:</h3>
+          <a [href]="documentationLink" target="_blank" class="text-blue-600 hover:underline">Visit Docs</a>
+        </div>
+
+        <div *ngIf="isFreeTier" class="mt-6 p-4 bg-yellow-100 rounded">
+          <p>Free Tier: {{ freeQuestions }} questions available, {{ codingAttemptsLeft }} coding attempts left.</p>
+        </div>
+
+        <div *ngIf="isPaidTier" class="mt-6 p-4 bg-green-100 rounded">
+          <p>Unlimited Access to Concepts, Coding Examples, and Mock Interviews.</p>
+        </div>
+      </div>
+    </div>
+  </div>
