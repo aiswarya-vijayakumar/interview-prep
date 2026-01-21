@@ -1,18 +1,39 @@
 .hero-section {
-    animation: fadeIn 1s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.metrics-section,
+.subscription-section,
+.feedback-section {
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
-  
-  .metrics-section, .subscription-section, .feedback-section {
-    animation: slideIn 1s ease-in-out;
+  to {
+    opacity: 1;
   }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
   }
-  
-  @keyframes slideIn {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
-  
+}
+
+.plans-wrapper {
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .plans-wrapper {
+    flex-direction: row;
+  }
+}
