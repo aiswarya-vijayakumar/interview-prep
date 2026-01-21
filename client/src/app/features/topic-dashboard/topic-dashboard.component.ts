@@ -7,13 +7,13 @@ import { HeaderComponent } from '../../shared/header/header.component';
 
 @Component({
   selector: 'app-topic-dashboard',
-  imports: [FormsModule, NgIf, NgFor, MatButtonModule,HeaderComponent],
+  imports: [FormsModule, NgIf, NgFor, MatButtonModule, HeaderComponent],
   templateUrl: './topic-dashboard.component.html',
   styleUrl: './topic-dashboard.component.scss'
 })
 export class TopicDashboardComponent {
 
-  constructor(private router: ActivatedRoute){}
+  constructor(private router: ActivatedRoute) { }
 
   @Input() topics = [];
   levels = ['Basic', 'Medium', 'Advanced'];
@@ -63,8 +63,7 @@ export class TopicDashboardComponent {
   }
 
   ngOnInit() {
-  
-    // this.selectedTopic = localStorage.getItem('selectedTopic') as string;
+    this.selectedTopic = localStorage.getItem('selectedTopic') as string;
   }
 
   getQuestions() {
@@ -76,7 +75,7 @@ export class TopicDashboardComponent {
     try {
       const result = new Function(this.code)();
       this.output = result !== undefined ? result.toString() : 'Code executed successfully';
-    } catch (error:any) {
+    } catch (error: any) {
       this.output = error.toString();
     }
 

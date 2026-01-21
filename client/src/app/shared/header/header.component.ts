@@ -1,54 +1,30 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Router, RouterModule } from '@angular/router';
 import { ApiService } from '../../services/api.service';
+import { NgIf } from '@angular/common';
+import { MatMenuModule } from '@angular/material/menu';
 
 @Component({
   selector: 'app-header',
-  imports: [MatIconModule, MatButtonModule, MatToolbarModule,RouterModule],
+  imports: [MatIconModule, MatButtonModule, MatToolbarModule, RouterModule, NgIf, MatMenuModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
+
 export class HeaderComponent {
 
-  constructor(private apiService: ApiService,private router: Router){}
+  @Input() hideAuthButtons: boolean = false;
 
-  signUp(){
-    const user = {
-      email: 'test@example.com',
-      password: '123456',
-      authType: 'PASSWORD'
-    };
+  constructor(private apiService: ApiService, private router: Router) { }
 
-    this.apiService.signup(user).subscribe({
-      next: (res: any) => {
-        alert(res['message']);
-      },
-      error: (err:any) => {
-        alert('Signup Failed: ' + err.message);
-      }
-    });
+  signUp() {
+    this.router.navigate(['/signup'])
   }
 
-  login(){
+  login() {
     this.router.navigate(['/login'])
-    // const credentials = {
-    //   email: 'test@example.com',
-    //   password: '123456',
-    //   authType: 'PASSWORD'
-    // };
-
-    // this.apiService.login(credentials).subscribe({
-    //   next: (res: any) => {
-    //     alert('Login Successful: ' + res['token']);
-    //   },
-    //   error: (err) => {
-    //     alert('Login Failed: ' + err.message);
-    //   }
-    // });
   }
-
-  googleLogin(){}
 }

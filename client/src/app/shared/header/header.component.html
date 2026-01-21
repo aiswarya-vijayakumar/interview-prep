@@ -1,22 +1,47 @@
-<mat-toolbar class="header-container shadow-lg">
-  <!-- Logo & Brand Name -->
-  <div class="flex items-center space-x-3 cursor-pointer" [routerLink]="['/']">
+<mat-toolbar class="header-container shadow-lg" color="primary">
+  <!-- Logo + Brand -->
+  <div class="flex items-center cursor-pointer" routerLink="/">
     <img src="logo.webp" alt="Hire Ready AI Logo" class="logo" />
-    <span class="brand-name text-white text-xl font-semibold tracking-wide">
-      Hire Ready AI [Beta]
+    <span
+      class="brand-name ml-3 text-xl font-semibold tracking-wide hidden md:inline"
+    >
+      Hire Ready AI <small class="opacity-80">[Beta]</small>
     </span>
   </div>
 
-  <div class="flex-grow"></div> <!-- Pushes Sign Up button to the right -->
+  <span class="flex-grow"></span>
 
-  <div class="flex gap-4 mt-4">
-    <button mat-raised-button color="accent" class="signup-btn px-6 py-2 rounded-lg shadow-md bg-blue-600 text-white hover:bg-blue-700 transition" (click)="signUp()">
-      Sign Up
-    </button>
-    <button mat-raised-button class="signup-btn px-6 py-2 rounded-lg shadow-md bg-green-600 text-white hover:bg-green-700 transition" (click)="login()">
-      Login
-    </button>
-   
-  </div>
-  
+  <!-- Auth buttons / menu – hidden on login/signup pages -->
+  <ng-container *ngIf="!hideAuthButtons">
+    <!-- Desktop buttons -->
+    <div class="hidden md:flex items-center gap-4 desktop-view">
+      <button
+        mat-raised-button
+        color="accent"
+        class="min-w-[100px]"
+        (click)="signUp()"
+      >
+        Sign Up
+      </button>
+      <button
+        mat-raised-button
+        color="accent"
+        class="min-w-[100px]"
+        (click)="login()"
+      >
+        Login
+      </button>
+    </div>
+
+    <!-- Mobile hamburger menu -->
+    <div class="md:hidden mobile-view">
+      <button class="text-white" mat-button [matMenuTriggerFor]="menu">
+        <mat-icon class="text-white">menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="signUp()">Sign Up</button>
+        <button mat-menu-item (click)="login()">Login</button>
+      </mat-menu>
+    </div>
+  </ng-container>
 </mat-toolbar>

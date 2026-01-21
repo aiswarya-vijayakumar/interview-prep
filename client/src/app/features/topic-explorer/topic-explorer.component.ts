@@ -50,6 +50,6 @@ constructor(private router:Router){}
 
   gotoDashboard(topic: string){
     this.router.navigate(['/topic-dashboard'], { state: { topic: topic } });
-    // localStorage.setItem('selectedTopic', topic);
+    localStorage.setItem('selectedTopic', topic);
   }
 }
