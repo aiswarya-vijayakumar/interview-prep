@@ -31,13 +31,28 @@
 
     <!-- Login Card -->
     <div
-      class="relative z-10 w-full max-w-md p-8 bg-white rounded-xl shadow-xl text-gray-900 transform transition-all hover:shadow-2xl"
+      class="relative z-10 w-full max-w-md p-8 m-8 bg-white rounded-xl shadow-xl text-gray-900 transform transition-all hover:shadow-2xl"
     >
       <h2
         class="text-3xl font-extrabold text-center text-gray-800 mb-8 tracking-tight"
       >
         HireReady AI
       </h2>
+
+      <!-- Google Login -->
+      <button
+        (click)="googleLogin()"
+        class="w-full flex items-center justify-center gap-3 bg-gray-50 border border-indigo-200 text-gray-700 py-3 rounded-lg hover:bg-indigo-50 transition-all duration-300 shadow-sm"
+      >
+        <img src="/google.png" class="w-6 h-6" /> Sign in with Google
+      </button>
+
+      <!-- Divider -->
+      <div class="flex items-center my-6">
+        <hr class="flex-grow border-gray-300" />
+        <span class="px-3 text-sm text-gray-500 font-medium">OR</span>
+        <hr class="flex-grow border-gray-300" />
+      </div>
 
       <!-- Login Form -->
       <form (submit)="login()" class="space-y-6">
@@ -56,45 +71,6 @@
           Login
         </button>
       </form>
-
-      <!-- Divider -->
-      <div class="flex items-center my-6">
-        <hr class="flex-grow border-gray-300" />
-        <span class="px-3 text-sm text-gray-500 font-medium">OR</span>
-        <hr class="flex-grow border-gray-300" />
-      </div>
-
-      <!-- Google Login -->
-      <button
-        (click)="googleLogin()"
-        class="w-full flex items-center justify-center gap-3 bg-gray-50 border border-indigo-200 text-gray-700 py-3 rounded-lg hover:bg-indigo-50 transition-all duration-300 shadow-sm"
-      >
-        <img src="/google.png" class="w-6 h-6" /> Sign in with Google
-      </button>
-
-      <!-- Mock Interview -->
-      <div class="mt-6 text-center">
-        <button
-          (click)="startMockInterview()"
-          class="inline-flex items-center gap-2 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-md"
-        >
-          <svg
-            class="w-5 h-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M14 5l7 7m0 0l-7 7m7-7H3"
-            ></path>
-          </svg>
-          Try a Mock Interview
-        </button>
-      </div>
 
       <!-- Signup Link -->
       <p class="mt-6 text-center text-gray-600">
